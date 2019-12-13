@@ -1,0 +1,48 @@
+HW 04 notes: This will be mostly javascript but will probably reference some html needs such as classes and ids
+
+lets go with ?? questions, 60 sec timer.
+
+going to need questions:
+
+var questions = [
+  {
+    title: "Commonly used data types DO NOT include:",
+    choices: ["strings", "booleans", "alerts", "numbers"],
+    answer: "alerts"
+  },
+  {
+    title: "The condition in an if / else statement is enclosed within ____.",
+    choices: ["quotes", "curly brackets", "parentheses", "square brackets"],
+    answer: "parentheses"
+  },
+  {
+      title: "Famous titles"
+      choices: ["Dolly Parton", "Your mother", ]
+      answer: "Dolly Parton"
+  }
+  {
+      title: "Pick a number, any number and you win."
+      choices: ["V", "dog", "moo", "5"]
+      answer: "5"
+  }
+  {
+      title:
+      choices:
+      answer:
+  }
+];
+
+
+Need timer started on button press that kicks out of the quiz when finished.
+    
+    <button id="startBtn"> Click to start Quiz </button>
+    button needs to disapear when quiz is started
+
+
+snipets of useful code
+
+.textContent = " "    use to change text within an html element to alter apperance of website through javascript
+localStorage.getItem("")  use to retrieve items from local localStorage useing key of pair
+localStorage.setItem("", ) use to put key value pair into local storage first item is key second item is value
+
+
