@@ -46,3 +46,8 @@ localStorage.getItem("")  use to retrieve items from local localStorage useing k
 localStorage.setItem("", ) use to put key value pair into local storage first item is key second item is value
 
 
+
+set interval(function(){
+
+}, 1000)
+
