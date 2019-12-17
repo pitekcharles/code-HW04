@@ -67,41 +67,20 @@ function questionPrint () {
         options.text(ansAry[n]);
         $(".optionBtns").append(options);
     }
+    currentQuestion++;
 }
 
 
-// function quizRun() {
-//     var printHighScore = 0;
-//     for (var i = 0; i < quizQuestions.length; i++){
-//         var item = quizQuestions[i];
-//         var ansAry = item.choices;
-//         questions.textContent = item.title;
-//         for (var n = 0; n < ansAry.length; n++){
-//             var options = $("<button>");
-//             options.attr("data-option", ansAry[n]);
-//             options.text(ansAry[n]);
-//             $(".optionBtns").append(options);
-//         }
-//     }
-
-// }
-
-// function quizRun(){
-//     var item = quizQuestions[0];
-//     var ansAry = item.choices;
-//     questions.textContent = item.title;
-//     for (var n = 0; n < ansAry.length; n++){
-//         var options = $("<button>");
-//         options.attr("data-option", ansAry[n]);
-//         options.text(ansAry[n]);
-//         $(".optionBtns").append(options);
-//     }
-// }
+optionBtn.on("click", function(){
+    $(".optionBtns").empty();
+    questionPrint();
+})
 
 quizButton.addEventListener("click", function () {
     quizButton.style.display = "none"
     quizTimer();
-    quizRun();
+    questionPrint();
+    // quizRun();
 });
 
 highScore.textContent = "High Score: " + storedHighScore;
