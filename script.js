@@ -6,6 +6,7 @@ var choices = document.querySelector(".choices");
 var optionBtn = $(".optionBtns");
 var score = 0;
 var storedHighScore = 0;
+var currentQuestion = 0;
 
 //Move to other folder later
 
@@ -56,6 +57,19 @@ function quizTimer() {
     }, 100)
 }
 
+function questionPrint () {
+    var item = quizQuestions[currentQuestion];
+    var ansAry = item.choices;
+    questions.textContent = item.title;
+    for (var n = 0; n < ansAry.length; n++){
+        var options = $("<button>");
+        options.attr("data-option", ansAry[n]);
+        options.text(ansAry[n]);
+        $(".optionBtns").append(options);
+    }
+}
+
+
 // function quizRun() {
 //     var printHighScore = 0;
 //     for (var i = 0; i < quizQuestions.length; i++){
@@ -91,3 +105,4 @@ quizButton.addEventListener("click", function () {
 });
 
 highScore.textContent = "High Score: " + storedHighScore;
+
