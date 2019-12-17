@@ -7,6 +7,7 @@ var optionBtn = $(".optionBtns");
 var score = 0;
 var storedHighScore = 0;
 var currentQuestion = 0;
+var quizCountDown = 60;
 
 //Move to other folder later
 
@@ -41,7 +42,6 @@ var quizQuestions = [
 //move to questions file later
 
 function quizTimer() {
-    var quizCountDown = 60;
     var timerInterval = setInterval(function () {
         timeEl.textContent = "Time: " + quizCountDown;
         quizCountDown--;
@@ -54,7 +54,7 @@ function quizTimer() {
 
             //add post quiz functionallity here likely a function call out to post quiz functions
         }
-    }, 100)
+    }, 1000)
 }
 
 function questionPrint () {
@@ -67,12 +67,23 @@ function questionPrint () {
         options.text(ansAry[n]);
         $(".optionBtns").append(options);
     }
-    currentQuestion++;
+    
 }
 
 
-optionBtn.on("click", function(){
+optionBtn.on("click", "button", function(){
+    var item = quizQuestions[currentQuestion];
+    console.log($(this).attr("data-option"));
+    console.log(item.answer)
+    
+    if (($(this).attr("data-option")) !== item.answer){
+        quizCountDown = quizCountDown - 5;
+    } else {
+        score += quizCountDown;
+    }
+    console.log(score)
     $(".optionBtns").empty();
+    currentQuestion++;
     questionPrint();
 })
 
