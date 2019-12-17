@@ -25,6 +25,7 @@ function quizRun(){
 quizButton.addEventListener("click", function(){
     quizButton.style.display = "none"
     quizTimer();
+    quizRun();
 });
 
 highScore.textContent = "High Score: " + storedHighScore;
