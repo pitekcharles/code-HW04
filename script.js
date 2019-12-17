@@ -9,38 +9,6 @@ var storedHighScore = 0;
 var currentQuestion = 0;
 var quizCountDown = 60;
 
-//Move to other folder later
-
-var quizQuestions = [
-    {
-        title: "Commonly used data types DO NOT include:",
-        choices: ["strings", "booleans", "alerts", "numbers"],
-        answer: "alerts"
-    },
-    {
-        title: "The condition in an if / else statement is enclosed within ____.",
-        choices: ["quotes", "curly brackets", "parentheses", "square brackets"],
-        answer: "parentheses"
-    },
-    {
-        title: "Famous titles",
-        choices: ["Dolly Parton", "Your mother"],
-        answer: "Dolly Parton"
-    },
-    {
-        title: "Pick a number, any number and you win.",
-        choices: ["V", "dog", "moo", "5"],
-        answer: "5"
-    },
-    {
-        title: "Ive paid my dues....",
-        choices: ["Every monday", "time after time", "the last thursday of the month"],
-        answer: "time after time"
-    }
-];
-
-//move to questions file later
-
 function quizTimer() {
     var timerInterval = setInterval(function () {
         timeEl.textContent = "Time: " + quizCountDown;
@@ -51,8 +19,6 @@ function quizTimer() {
             timeEl.textContent = "";
             questions.textContent = "Score: " + score;
             $(".optionBtns").empty();
-
-            //add post quiz functionallity here likely a function call out to post quiz functions
         }
     }, 1000)
 }
@@ -69,7 +35,6 @@ function questionPrint () {
     }
     
 }
-
 
 optionBtn.on("click", "button", function(){
     var item = quizQuestions[currentQuestion];
