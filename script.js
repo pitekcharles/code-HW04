@@ -56,24 +56,33 @@ function quizTimer() {
     }, 100)
 }
 
-function quizRun() {
-    var printHighScore = 0;
-    for (var i = 0; i < quizQuestions.length; i++){
-        var item = quizQuestions[i];
-        var ansAry = item.choices;
-        console.log(ansAry);
-        console.log(quizQuestions[i]);
-        questions.textContent = item.title;
-        for (var n = 0; n < ansAry.length; n++){
-            var options = $("<button>");
-            options.attr("data-option", ansAry[n]);
-            options.text(ansAry[n]);
-            $(".optionBtns").append(options);
-            console.log(n);
-        }
-    }
+// function quizRun() {
+//     var printHighScore = 0;
+//     for (var i = 0; i < quizQuestions.length; i++){
+//         var item = quizQuestions[i];
+//         var ansAry = item.choices;
+//         questions.textContent = item.title;
+//         for (var n = 0; n < ansAry.length; n++){
+//             var options = $("<button>");
+//             options.attr("data-option", ansAry[n]);
+//             options.text(ansAry[n]);
+//             $(".optionBtns").append(options);
+//         }
+//     }
 
-}
+// }
+
+// function quizRun(){
+//     var item = quizQuestions[0];
+//     var ansAry = item.choices;
+//     questions.textContent = item.title;
+//     for (var n = 0; n < ansAry.length; n++){
+//         var options = $("<button>");
+//         options.attr("data-option", ansAry[n]);
+//         options.text(ansAry[n]);
+//         $(".optionBtns").append(options);
+//     }
+// }
 
 quizButton.addEventListener("click", function () {
     quizButton.style.display = "none"

@@ -1,0 +1,29 @@
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+#quizTime {
+    float: left;
+}
+
+#highScore {
+    float: right;
+}
+
+h1 {
+    text-align: center;
+}
+
+.questions {
+    text-align: center;
+}
+
+.optionBtns {
+    text-align: center;
+}
+
+#startQuiz {
+    text-align: center;
+}

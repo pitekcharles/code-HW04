@@ -51,3 +51,7 @@ set interval(function(){
 
 }, 1000)
 
+outside var set = 0
+make a function to print out question and choices to html and increment outside var by 1
+when a option button is pressed if runs the function again as long as the outside var is less than the lenght of the questions array
+
