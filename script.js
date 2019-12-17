@@ -3,6 +3,7 @@ var quizButton = document.getElementById("startQuiz");
 var highScore = document.getElementById("highScore");
 var questions = document.querySelector(".questions");
 var choices = document.querySelector(".choices");
+var optionBtn = $(".optionBtns");
 var score = 0;
 var storedHighScore = 0;
 
@@ -47,7 +48,9 @@ function quizTimer() {
         if (quizCountDown === 0) {
             clearInterval(timerInterval);
             timeEl.textContent = "";
-            questions.textContent = "";
+            questions.textContent = "Score: " + score;
+            $(".optionBtns").empty();
+
             //add post quiz functionallity here likely a function call out to post quiz functions
         }
     }, 100)
@@ -55,9 +58,20 @@ function quizTimer() {
 
 function quizRun() {
     var printHighScore = 0;
-    var item = quizQuestions[0];
-    console.log(quizQuestions[0]);
-    questions.textContent = item.title;
+    for (var i = 0; i < quizQuestions.length; i++){
+        var item = quizQuestions[i];
+        var ansAry = item.choices;
+        console.log(ansAry);
+        console.log(quizQuestions[i]);
+        questions.textContent = item.title;
+        for (var n = 0; n < ansAry.length; n++){
+            var options = $("<button>");
+            options.attr("data-option", ansAry[n]);
+            options.text(ansAry[n]);
+            $(".optionBtns").append(options);
+            console.log(n);
+        }
+    }
 
 }
 
