@@ -18,3 +18,5 @@ To take the quiz follow these steps
 
 ## Technology
 For this project html, javascript, css, and jQuery are all used.
+
+### This is a Charles Pitek Project.
