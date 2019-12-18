@@ -14,7 +14,7 @@ function quizTimer() {
         timeEl.textContent = "Time: " + quizCountDown;
         quizCountDown--;
 
-        if (quizCountDown === 0) {
+        if (quizCountDown === 0 || currentQuestion === quizQuestions.length) {
             clearInterval(timerInterval);
             timeEl.textContent = "";
             questions.textContent = "Score: " + score;
@@ -49,7 +49,9 @@ optionBtn.on("click", "button", function(){
     console.log(score)
     $(".optionBtns").empty();
     currentQuestion++;
-    questionPrint();
+    if (currentQuestion < quizQuestions.length) {
+        questionPrint();
+    } 
 })
 
 quizButton.addEventListener("click", function () {
