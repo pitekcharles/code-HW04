@@ -27,3 +27,8 @@ h1 {
 #startQuiz {
     text-align: center;
 }
+
+.initial {
+    display: none;
+    text-align: center;
+}

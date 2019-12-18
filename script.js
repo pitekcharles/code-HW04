@@ -17,7 +17,12 @@ function quizTimer() {
         if (quizCountDown === 0 || currentQuestion === quizQuestions.length) {
             clearInterval(timerInterval);
             timeEl.textContent = "";
-            questions.textContent = "Score: " + score;
+            if (score > storedHighScore){
+                questions.textContent = "New High Score! " + score;
+                $(".initial").show();
+            } else {
+                questions.textContent = "Score: " + score;
+            }
             $(".optionBtns").empty();
         }
     }, 1000)
@@ -54,12 +59,26 @@ optionBtn.on("click", "button", function(){
     } 
 })
 
+$(".initial").on("click", "button", function(){
+    storedHighScore = score;
+    var initials = $("#init").val();
+    console.log(initials)
+    $(".initial").empty();
+    var highScoreAry = [initials, storedHighScore];
+    var highScore = highScoreAry.toString();
+    localStorage.setItem("High Score" , highScore);
+})
+
 quizButton.addEventListener("click", function () {
     quizButton.style.display = "none"
     quizTimer();
     questionPrint();
-    // quizRun();
 });
 
-highScore.textContent = "High Score: " + storedHighScore;
+var sto = localStorage.getItem("High Score");
+console.log(sto);
+sto = sto.split(",");
+console.log(sto);
+storedHighScore = sto[1];
+highScore.textContent = `High Score: ${storedHighScore} ${sto[0]}`;
 
